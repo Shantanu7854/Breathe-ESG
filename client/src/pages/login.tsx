@@ -1,21 +1,30 @@
 import React from 'react';
-import type { FormProps } from 'antd';
 import { Button, Form, Input } from 'antd';
-import '../styles/login.scss'; // Ensure you import the SCSS file
+import { auth, provider } from '../firebase/firebase';  // import Firebase configuration
+import { signInWithPopup } from "firebase/auth";
+import '../styles/login.scss'; 
 import logo from '../assets/logo.png';
 
 type FieldType = {
   email?: string;
   password?: string;
-  confirmPassword?: string;
 };
 
-const onFinish: FormProps<FieldType>['onFinish'] = (values) => {
+const onFinish = (values: FieldType) => {
   console.log('Success:', values);
 };
 
-const onFinishFailed: FormProps<FieldType>['onFinishFailed'] = (errorInfo) => {
+const onFinishFailed = (errorInfo: any) => {
   console.log('Failed:', errorInfo);
+};
+
+const handleGoogleSignIn = async () => {
+  try {
+    const result = await signInWithPopup(auth, provider);
+    console.log('Google Sign-In Success:', result.user);
+  } catch (error) {
+    console.error('Google Sign-In Error:', error);
+  }
 };
 
 const App: React.FC = () => (
@@ -31,7 +40,8 @@ const App: React.FC = () => (
     </div>
     <div className="right-form">
       <div className="form-box">
-        <h1 className="form-heading">SignUp</h1>
+        <h1 className="form-heading">Login</h1>
+        <p>Enter your registered Email-Id to continue</p>
         <Form
           name="basic"
           labelCol={{ span: 8 }}
@@ -49,16 +59,15 @@ const App: React.FC = () => (
             <label>Password</label>
             <Input.Password name="password" />
           </div>
-          <div className="form-item">
-            <label>Confirm Password</label>
-            <Input.Password name="confirmPassword" />
-          </div>
           <Form.Item wrapperCol={{ offset: 8, span: 16 }}>
-            <Button type="primary" htmlType="submit">
+            <Button type="primary" htmlType="submit" className="button">
               Continue
             </Button>
           </Form.Item>
         </Form>
+        <Button type="primary" className="google-signin" onClick={handleGoogleSignIn}>
+          Sign in with Google
+        </Button>
       </div>
     </div>
   </div>

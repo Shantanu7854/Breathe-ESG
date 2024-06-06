@@ -34,35 +34,35 @@
 .logo-container {
   display: flex;
   align-items: center;
-  margin-bottom: 20px; /* Reduced the gap */
+  margin-bottom: 20px; 
 }
 
 .logo {
-  width: 50px; /* Adjust the size as needed */
+  width: 50px; 
   height: auto;
-  margin-right: 10px; /* Space between image and text */
+  margin-right: 10px; 
 }
 
 .left-content p {
-  font-size: 2rem; /* Adjust font size as needed */
-  margin-bottom: 30px; /* Remove default margins */
+  font-size: 2rem; 
+  margin-bottom: 30px; 
 }
 
 .left-content h1 {
   font-size: 3rem;
-  margin: 0; /* Remove default margins */
+  margin: 0; 
 }
 
 .left-content p.description {
   font-size: 1.2rem;
-  margin: 10px 0; /* Adjust margin as needed */
+  margin: 10px 0; 
   color: rgb(159,159,159);
 }
 
 .left-content a {
-  color: #00bfff; /* Adjust as needed */
+  color: #00bfff; 
   text-decoration: underline;
-  margin-top: 10px; /* Adjust margin as needed */
+  margin-top: 10px; 
 }
 
 .right-form {
@@ -72,21 +72,22 @@
   justify-content: center;
   background-color: #21453C;
   padding: 2rem;
+  
 }
 
 .form-box {
-  background-color: #235e4a; /* Updated color */
+  background-color: #235e4a; 
   padding: 2rem;
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  width: 400px; /* Adjust width as needed */
+  width: 400px; 
 }
 
 .form-item {
   display: flex;
   flex-direction: column;
   margin-bottom: 1rem;
-  width: 100%; /* Adjust width as needed */
+  width: 100%; 
 }
 
 .form-item label {
@@ -94,9 +95,14 @@
 }
 
 .ant-input {
-  width: 100%; /* Adjust width as needed */
+  width: 100%; 
 }
 
 .tagline {
   font-size: 50px;
+}
+
+.button{
+  background-color: #32982b;
+  
 }
