@@ -2,6 +2,7 @@ import React from 'react';
 import type { FormProps } from 'antd';
 import { Button, Form, Input } from 'antd';
 import '../styles/login.scss'; // Ensure you import the SCSS file
+import logo from '../assets/logo.png';
 
 type FieldType = {
   email?: string;
@@ -21,8 +22,11 @@ const App: React.FC = () => (
   <div className="login-container">
     <div className="left-content">
       <p>WELCOME TO</p>
-      <h2>BREATHE ESG</h2>
-      <p>We help you track your organization's metrics as per the ESG Guidelines</p>
+      <div className="logo-container">
+        <img src={logo} alt="Breathe ESG Logo" className="logo" />
+        <h1 className="tagline">BREATHE ESG</h1>
+      </div>
+      <p className="description">We help you track your organization's metrics as per the ESG Guidelines</p>
       <a href="#">Get in touch!</a>
     </div>
     <div className="right-form">
